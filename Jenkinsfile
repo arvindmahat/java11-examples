@@ -1,4 +1,5 @@
 node('jdk11-mvn3.8.4') {
+    properties(properties([pipelineTriggers([upstream('starterproject, ')])]))
     stage('git') {
         git 'https://github.com/arvindmahat/java11-examples.git'
     }
